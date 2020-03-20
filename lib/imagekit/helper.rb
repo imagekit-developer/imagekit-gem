@@ -26,7 +26,7 @@ module ImagekitHelper
 
     def imagekit_url_internal(source, options)
       return source unless options[:transformation].present?
-      image_name = source.match( /[-_\w:]+\.(jpe?g|png|gif)$/i).to_s
+      image_name = source.match( /[\.\-_\w:]+\.(jpe?g|png|gif)$/i).to_s
       source.slice!(image_name)
       array = []
       options[:transformation].each do |k, v|
